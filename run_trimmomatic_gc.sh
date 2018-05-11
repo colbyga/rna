@@ -1,7 +1,8 @@
 #!/bin/bash
 #SBATCH --mem=120gb
-#SBATCH --array=1-18%4
-#SBATCH -c 4
+#SBATCH --array=1-18%8
+#SBATCH -c 8
+#SBATCH -t 14-0:0:0 
 #SBATCH -o /global/project/hpcg1504/rna/logs_gc/gc_run_trimmomatic.sh.%A_%a.stdout
 #SBATCH -e /global/project/hpcg1504/rna/logs_gc/slurm/gc_run_trimmomatic.sh.%A_%a.stderr
 
