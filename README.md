@@ -1,4 +1,4 @@
-# rna
+# rna analysis a metatranscriptomics pipeline
 This is a repository containing all scripts used to execute a metatranscriptome analysis using the slurm scheduler
 
 The following tools need to be installed and placed in the PATH for the scripts to work:
