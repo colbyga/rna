@@ -1,0 +1,10 @@
+vsearch v2.5.0_linux_x86_64, 251.4GB RAM, 24 cores
+https://github.com/torognes/vsearch
+
+Reading input file 100%
+4560126 sequences kept (of which 0 truncated), 0 sequences discarded.
+Traceback (most recent call last):
+  File "/global/project/hpcg1504/rna/bin/python_scripts/2_Infernal_Filter.py", line 33, in <module>
+    mRNA_seqs.add(sequence)
+TypeError: unhashable type: 'SeqRecord'
+
