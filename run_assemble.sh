@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --mem=250gb
+#SBATCH --mem=200gb
 #SBATCH --array=1-18%12
 #SBATCH -c 12
 #SBATCH -t 3-0:0:0 
@@ -49,7 +49,7 @@ source deactivate
 #chaning environments
 #########
 echo "changed envs, executing python script 5"
-source activate parkinson
+source activate parkinson_py2.7.12
 
 module load bwa/0.7.17
 module load samtools/1.5

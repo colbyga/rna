@@ -32,7 +32,7 @@ PREFIX=`echo $PREFIX | sed 's/_mRNA.fastq//g'`
 
 cd $KAIJUOUT
 
-$KAIJU/kaiju -t $KAIJUFILES/nodes.dmp -f $KAIJUFILES/kaiju_db.fmi -i $mRNA -a greedy -e 5 -m 11 -s 75 -z 8 -o $PREFIX"_classification.tsv"
+$KAIJU/kaiju -t $KAIJUFILES/nodes.dmp -f $KAIJUFILES/kaiju_db_nr.fmi -i $mRNA -a greedy -e 5 -m 11 -s 75 -z 8 -o $PREFIX"_classification.tsv"
 
 python $SCRIPTS/4_Constrain_Classification.py genus $KAIJUOUT/$PREFIX"_classification.tsv" $KAIJUFILES/nodes.dmp $KAIJUFILES/names.dmp $KAIJUOUT/$PREFIX"_classification_genus.tsv"
 

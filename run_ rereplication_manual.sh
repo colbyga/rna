@@ -25,16 +25,16 @@ INFERNAL=$BASEDIR/analysis_gc/infernal
 REREP=$BASEDIR/analysis_gc/rereplication
 							
 
-#mRNA=`ls $INFERNAL/*_unique_mRNA.fastq | head -n 1 | tail -n 1`
-mRNA=`ls $INFERNAL/*_unique_mRNA.fastq | head -n $SLURM_ARRAY_TASK_ID | tail -n 1`
+mRNA=`ls $INFERNAL/*_unique_mRNA.fastq | head -n 7 | tail -n 1`
+#mRNA=`ls $INFERNAL/*_unique_mRNA.fastq | head -n $SLURM_ARRAY_TASK_ID | tail -n 1`
 
 PREFIX=`basename $mRNA`
 PREFIX=`echo $PREFIX | sed 's/_unique_mRNA.fastq//g'`
 
-#QUALFILE=`ls $VSEARCH/*qual.fastq | head -n 1| tail -n 1`
-QUALFILE=`ls $VSEARCH/*qual.fastq | head -n $SLURM_ARRAY_TASK_ID | tail -n 1`
-#CDHITFILE=`ls $CDHIT/*qual_unique.fastq.clstr | head -n 1 | tail -n 1`
-CDHITFILE=`ls $CDHIT/*qual_unique.fastq.clstr | head -n $SLURM_ARRAY_TASK_ID | tail -n 1`
+QUALFILE=`ls $VSEARCH/*qual.fastq | head -n 7| tail -n 1`
+#QUALFILE=`ls $VSEARCH/*qual.fastq | head -n $SLURM_ARRAY_TASK_ID | tail -n 1`
+CDHITFILE=`ls $CDHIT/*qual_unique.fastq.clstr | head -n 7 | tail -n 1`
+#CDHITFILE=`ls $CDHIT/*qual_unique.fastq.clstr | head -n $SLURM_ARRAY_TASK_ID | tail -n 1`
 
 cd $REREP
 

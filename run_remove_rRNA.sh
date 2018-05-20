@@ -27,7 +27,7 @@ INFERNAL=$BASEDIR/analysis_gc/infernal
 SCRIPTS=$BASEDIR/bin/python_scripts
 RFAM=$BASEDIR/bin/Rfam
 
-#FILENAME1=`ls $CONTAM/*_univec_blat.fastq | head -n 1 | tail -n 1`
+#FILENAME1=`ls $CONTAM/*_univec_blat.fastq | head -n 18 | tail -n 1`
 FILENAME1=`ls $CONTAM/*_univec_blat.fastq | head -n $SLURM_ARRAY_TASK_ID | tail -n 1`
 
 PREFIX=`basename $FILENAME1`
@@ -44,6 +44,8 @@ cmsearch -o $INFERNAL/$PREFIX"_rRNA.log" --tblout $INFERNAL/$PREFIX"_rRNA.infern
 
 # using python script
 python $SCRIPTS/2_Infernal_Filter.py $FILENAME1 $PREFIX"_rRNA.infernalout" $PREFIX2"_unique_mRNA.fastq" $PREFIX2"_unique_rRNA.fastq"
+
+#echo python $SCRIPTS/2_Infernal_Filter.py $FILENAME1 $PREFIX"_rRNA.infernalout" $PREFIX2"_unique_mRNA.fastq" $PREFIX2"_unique_rRNA.fastq" 
 
 # The argument structure for this script is: 2_Infernal_Filter.py <Input_Reads.fq> <Infernal_Output_File> <mRNA_Reads_Output> <rRNA_Reads_Output>
 
